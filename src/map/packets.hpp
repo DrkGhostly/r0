@@ -848,6 +848,14 @@ struct PACKET_ZC_GUILD_CHAT {
 } __attribute__((packed));
 DEFINE_PACKET_HEADER(ZC_GUILD_CHAT, 0x17f)
 
+struct PACKET_ZC_GUILD_ALLIANCECHAT {
+	int16 packetType;
+	int16 packetLength;
+	char message[];
+} __attribute__((packed));
+DEFINE_PACKET_HEADER(ZC_GUILD_ALLIANCECHAT, 0x0bde)
+DEFINE_PACKET_HEADER(CZ_GUILD_ALLIANCECHAT, 0x0bdd)
+
 struct PACKET_ZC_STATUS {
 	int16 packetType;
 	uint16 point;
@@ -2098,11 +2106,13 @@ struct PACKET_ZC_WHISPER_LIST{
 } __attribute__((packed));
 DEFINE_PACKET_HEADER(ZC_WHISPER_LIST, 0xd4);
 
+/*
 struct PACKET_CZ_ALLY_CHAT{
 	int16 packetType;
 	int16 packetLength;
 } __attribute__((packed));
 DEFINE_PACKET_HEADER(CZ_ALLY_CHAT, 0xbdd);
+*/
 
 /*
 struct PACKET_CZ_REQ_REPORT_USER{

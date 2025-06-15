@@ -2033,9 +2033,11 @@
 	parseable_packet( HEADER_CZ_RESET_SKILL, sizeof( struct PACKET_CZ_RESET_SKILL ), clif_parse_reset_skill, 0 );
 #endif
 
+/*
 #if PACKETVER_MAIN_NUM >= 20230607
 	parseable_packet( HEADER_CZ_ALLY_CHAT, -1, clif_parse_dull, 0 );
 #endif
+*/
 
 /*
 #if PACKETVER_MAIN_NUM >= 20230705
@@ -2065,6 +2067,10 @@
 	packet(HEADER_ZC_EMOTION2_EXPANTION, sizeof(PACKET_ZC_EMOTION2_EXPANTION));
 	packet(HEADER_ZC_EMOTION2_EXPANTION_FAIL, sizeof(PACKET_ZC_EMOTION2_EXPANTION_FAIL));
 	packet(HEADER_ZC_EMOTION2_EXPANTION_LIST, -1);
+#endif
+
+#if PACKETVER_MAIN_NUM >= 20231115
+	parseable_packet(HEADER_CZ_GUILD_ALLIANCECHAT, -1, clif_parse_GuildAllianceMessage, 2, 4);
 #endif
 
 #if PACKETVER_MAIN_NUM >= 20240502
