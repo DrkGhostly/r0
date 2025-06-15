@@ -79,6 +79,7 @@ int32 chrif_changesex(map_session_data *sd, bool change_account);
 int32 chrif_divorce(int32 partner_id1, int32 partner_id2);
 
 int32 chrif_removefriend(uint32 char_id, int32 friend_id);
+int32 chrif_macro_user_report(const uint32 inreporterAID, const uint32 inreportedAID, const uint16 inreportType, const char* inreportMessage);
 
 void chrif_parse_ack_vipActive(int32 fd);
 
