@@ -2247,6 +2247,25 @@ struct PACKET_ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO {
 DEFINE_PACKET_HEADER(ZC_NPC_EXPANDED_BARTER_MARKET_ITEMINFO, 0x0b56);
 #endif  // PACKETVER_MAIN_NUM >= 20191120 || PACKETVER_RE_NUM >= 20191106 || PACKETVER_ZERO_NUM >= 20191127
 
+#if PACKETVER_MAIN_NUM >= 20230920
+struct PACKET_CZ_REQUEST_RANDOM_UPGRADE_ENCHANT {
+	int16 packetType;
+	uint64 clientLuaIndex;
+	uint16 index;
+	uint16 slot;
+} __attribute__((packed));
+DEFINE_PACKET_HEADER(CZ_REQUEST_RANDOM_UPGRADE_ENCHANT, 0x0bf0);
+
+struct PACKET_CZ_REQUEST_PERFECT_UPGRADE_ENCHANT {
+	int16 packetType;
+	uint64 clientLuaIndex;
+	uint16 index;
+	uint16 slot;
+	uint32 itemId;
+} __attribute__((packed));
+DEFINE_PACKET_HEADER(CZ_REQUEST_PERFECT_UPGRADE_ENCHANT, 0x0bf1);
+#endif
+
 // NetBSD 5 and Solaris don't like pragma pack but accept the packed attribute
 #if !defined( sun ) && ( !defined( __NETBSD__ ) || __NetBSD_Version__ >= 600000000 )
 	#pragma pack( pop )

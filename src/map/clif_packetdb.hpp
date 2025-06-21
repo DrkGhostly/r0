@@ -2064,6 +2064,11 @@
 	parseable_packet(HEADER_CZ_MACRO_USER_REPORT_REQ, sizeof(struct PACKET_CZ_MACRO_USER_REPORT_REQ), clif_parse_macro_user_report, 0);
 #endif
 
+#if PACKETVER_MAIN_NUM >= 20230920
+	parseable_packet(HEADER_CZ_REQUEST_RANDOM_UPGRADE_ENCHANT, sizeof(struct PACKET_CZ_REQUEST_RANDOM_UPGRADE_ENCHANT), clif_parse_enchantwindow_upgrade_random, 0);
+	parseable_packet(HEADER_CZ_REQUEST_PERFECT_UPGRADE_ENCHANT, sizeof(struct PACKET_CZ_REQUEST_PERFECT_UPGRADE_ENCHANT), clif_parse_enchantwindow_upgrade, 0);
+#endif
+
 #if (PACKETVER_MAIN_NUM >= 20230925)
 	parseable_packet(HEADER_CZ_REQ_EMOTION2, sizeof(PACKET_CZ_REQ_EMOTION2), clif_parse_emotion2, 0);
 	packet(HEADER_ZC_EMOTION2, sizeof(PACKET_ZC_EMOTION2));
